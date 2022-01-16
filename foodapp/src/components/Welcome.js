@@ -1,10 +1,6 @@
-import React,{Component} from "react";
-import App from "../App";
-class Welcome extends Component{
-    render(){
-        return <h1>its started</h1>
-    }
+import React from "react"
+function Welcome(){
+    return <h1> Welcome to the react app</h1>
 
 }
-
-export default Welcome
+export default Welcome  
