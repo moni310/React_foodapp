@@ -6,13 +6,15 @@ import Welcome from"./components/Welcome"
 import { BrowserRouter as Router,Routes ,Link, Route} from "react-router-dom"
 
 function App() {
+
+
   return (
     
     <div className="App">
       <Hello/>
 
       <Welcome/>
-      <Link to ="/food" >food</Link>
+      <Link to ="/food">food</Link>
     
       <Routes> 
 
