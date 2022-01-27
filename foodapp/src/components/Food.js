@@ -25,20 +25,14 @@ componentDidMount() {
 render(){
   return (
     <ul>
-      {<div>
-    <h2>Food</h2>
-    These all things are avilable.
-    <br/>
-    1. Breakfastry 
-    2. Lunch
-    3. Snacks
-    4. Dinner
-  </div> }
+      <div>
+        <h1>These all things are there.</h1>
+      </div> 
     
       { this.state.foods.map((food,id) => <a key={id}>  {food.name}</a>)}
-    </ul>
 
-  
+    </ul>
+    
   )
 }
 }
