@@ -1,8 +1,7 @@
 import './App.css';
 import React from "react"
-import Hello from "./components/Hello"
-import Food from "./components/Food"
-import Welcome from"./components/Welcome"
+import Food from "./Components/Food"
+import CreateFood from "./Components/CreateFood"
 import { BrowserRouter as Router,Routes ,Link, Route} from "react-router-dom"
 
 function App() {
@@ -11,16 +10,19 @@ function App() {
   return (
     
     <div className="App">
-      <Hello/>
-
-      <Welcome/>
-      <Link to ="/food">food</Link>
-    
+      <Link to="food_list" target="_blank">food_list</Link>
+      <br>
+      
+      </br>
+      <Link to ="Create_food" target="_blank"> Create_food</Link>
       <Routes> 
 
 
         
-        <Route path="/food" element={<Food />} />
+        <Route path ="/food_list" element={<Food/>} /> 
+        
+        <Route path = "/Create_food" element={ <CreateFood/>}/>
+      
 
         
       </Routes>
@@ -29,4 +31,4 @@ function App() {
   );
 }
 export default App;
-
+;
