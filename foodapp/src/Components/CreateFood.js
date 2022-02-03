@@ -5,15 +5,19 @@ import axios from 'axios';
 
 
 class CreateFood extends Component {
+
+  
   constructor() {
     super();
     this.state = {
-      name: '',
-      calories:''
       
+      name:'',
+      calories:'',
+    
     };
   }
 
+  
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -22,23 +26,29 @@ class CreateFood extends Component {
     e.preventDefault();
 
     const data = {
-      name: this.state.title,
-      calories: this.state.isbn,
+  
+      name: this.state.name,
+      calories: this.state.calories,
       
     };
 
+    
     axios
-      .post('http://localhost:4000/foods', data)
+      .post(`http://localhost:4000/foods`, data)
+      
       .then(res => {
         this.setState({
-          name: '',
+          
+          name:'',
           calories:'',
           
         })
-        this.props.history.push('/');
+        let data =this.props.history.push('foods')
+       
       })
       .catch(err => {
-        console.log("Error in CreateFood!");
+        console.log(data);
+        
       })
   };
 
@@ -53,27 +63,26 @@ class CreateFood extends Component {
                   Show Food List
               </Link>
             </div>
-
-
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Add Food</h1>
               <p className="lead text-center">
-                  Create new Food
+                  Create new food
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
                 
-                <br />
-
                 
+                <br/>
+
+              
 
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Foodname'
-                    name='Foodname'
+                    placeholder='name'
+                    name='name'
                     className='form-control'
-                    value={this.state.author}
+                    value={this.state.name}
                     onChange={this.onChange}
                   />
                 </div>
@@ -81,15 +90,13 @@ class CreateFood extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='calories of food'
-                    name='calories of food'
+                    placeholder='calories'
+                    name='calories'
                     className='form-control'
-                    value={this.state.description}
+                    value={this.state.calories}
                     onChange={this.onChange}
                   />
                 </div>
-
-                
 
                 <input
                     type="submit"
