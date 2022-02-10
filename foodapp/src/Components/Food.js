@@ -1,19 +1,15 @@
 import React from "react";
 import axios from "axios"
+import {Link} from "react-router-dom"
 
 
 class Food extends React.Component{
- 
-
-  state ={
+ state ={
     foods:[]
     
-     
-  }
-  
-
-componentDidMount() {
-  document.body.style.backgroundColor = "pink"
+ }
+ componentDidMount() {
+  document.body.style.backgroundColor = "skyblue"
   
   axios.get( `http://localhost:4000/foods`)
   
@@ -34,24 +30,19 @@ componentDidMount() {
 render(){
   
   return (
-    
-    
-    
     <ul>
       <pre>
-        
-    
-      { this.state.foods.map((foods,id) => <li key={id}> "Food Name"  :{foods.name} ,  Calories:  {foods.calories}</li>)}
-      </pre>
-      
+     { this.state.foods.map((foods,_id) => <li key={_id}> "Food Name" :{foods.name} ,  Calories:  {foods.calories},  <Link to ={`/food_list/${foods._id}`}> ,<button> Edit</button> , <button> Delete</button></Link></li>)}
+     
+     </pre>
 
     </ul>
     
+)
+}
+}
 
-    
-  )
-}
-}
+
 
 
 export default Food

@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+// document.body.style = 'background: pink;';
 
 
 class CreateFood extends Component {
 
   
+  
+
+  
   constructor() {
     super();
+    
     this.state = {
       
       name:'',
@@ -44,6 +49,7 @@ class CreateFood extends Component {
           
         })
         let data =this.props.history.push('foods')
+        
        
       })
       .catch(err => {
@@ -53,20 +59,24 @@ class CreateFood extends Component {
   };
 
   render() {
+
     return (
+    
       <div className="CreateFood">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+            
               <br />
               <Link to="/" className="btn btn-outline-warning float-left">
-                  Show Food List
+                  <h2>Go to the home of Food App</h2>
               </Link>
             </div>
+
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Food</h1>
+              <h1 className="display-4 text-center"> <h2>Add Food</h2> </h1>
               <p className="lead text-center">
-                  Create new food
+                 <h3>Create new food</h3> 
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
@@ -97,6 +107,7 @@ class CreateFood extends Component {
                     onChange={this.onChange}
                   />
                 </div>
+                
 
                 <input
                     type="submit"
